@@ -1,0 +1,38 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>nest</title>
+<link rel="icon" type="image/png" href="/nest.png">
+<style>
+*{box-sizing:border-box;font-family:consolas,monospace}
+body{margin:0;background:#0d0f12;color:#c9d1d9;display:flex;flex-direction:column;align-items:center;justify-content:center;height:100dvh;gap:18px}
+.wordmark{color:#fff;font-size:56px;font-weight:700;letter-spacing:12px;text-transform:lowercase;-webkit-text-stroke:3px #000;text-shadow:4px 6px 0 rgba(0,0,0,.8);user-select:none;-webkit-user-select:none;-webkit-user-drag:none}
+.omni{display:flex;align-items:center;width:min(78vw,720px);background:#161b22;border:1px solid #30363d;border-radius:28px;padding:4px 4px 4px 22px;transition:border-color .15s,box-shadow .15s}
+.omni:focus-within{border-color:#58a6ff;box-shadow:0 0 0 3px rgba(88,166,255,.16)}
+.omni input{flex:1;background:transparent;border:0;outline:none;color:#c9d1d9;font:16px consolas,monospace;padding:14px 0}
+.omni .go{background:#238636;border:0;color:#fff;border-radius:22px;padding:12px 22px;cursor:pointer;font:inherit}
+.tag{color:#8b949e;font-size:12px;letter-spacing:4px;text-transform:uppercase}
+footer{position:fixed;bottom:14px;color:#484f58;font-size:11px}
+</style>
+<script src="/scram/scramjet.all.js"></script>
+<script src="/baremux/index.js"></script>
+<script src="/register-sw.js" defer></script>
+<script src="/search.js" defer></script>
+<script src="/index.js" defer></script>
+</head>
+<body>
+<img src="/nest.png" alt="nest" width="72" height="72" draggable="false" style="pointer-events:none;user-select:none;-webkit-user-drag:none;filter:drop-shadow(3px 4px 0 rgba(0,0,0,.7))">
+<div class="wordmark">nest</div>
+<form id="sj-form" class="omni">
+<input id="sj-search-engine" value="https://www.google.com/search?q=%s" type="hidden">
+<input id="sj-address" type="text" placeholder="search or type a url" autofocus autocomplete="off" spellcheck="false">
+<button class="go" type="submit">go</button>
+</form>
+<div class="tag">scramjet + wisp</div>
+<div id="sj-error" style="color:#f85149;font-size:12px"></div>
+<pre id="sj-error-code" style="color:#8b949e;font-size:11px;max-width:min(78vw,720px);overflow:auto;margin:0"></pre>
+<footer>nestdeep</footer>
+</body>
+</html>
